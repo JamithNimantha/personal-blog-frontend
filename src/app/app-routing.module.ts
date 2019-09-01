@@ -5,6 +5,9 @@ import {SinglePostComponent} from './components/single-post/single-post.componen
 import {MainMenuComponent} from './components/main-menu/main-menu.component';
 import {LoginComponent} from './components/login/login.component';
 import {AdminMainMenuComponent} from './components/admin/admin-main-menu/admin-main-menu.component';
+import {DashboardComponent} from './components/admin/dashboard/dashboard.component';
+import {CreateAPostComponent} from './components/admin/create-a-post/create-a-post.component';
+import {SettingsComponent} from './components/admin/settings/settings.component';
 
 
 const routes: Routes = [
@@ -16,9 +19,14 @@ const routes: Routes = [
   },
   {path: 'admin-login', component: LoginComponent},
   {path: 'app', component: AdminMainMenuComponent, children: [
-      {path: '', component: AdminMainMenuComponent}
-    ]},
-  {path: '**', redirectTo: ''}
+      {path: '', component: DashboardComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'settings', component: SettingsComponent},
+      {path: 'create-a-post', component: CreateAPostComponent}
+    ]
+  },
+  {path: 'login', component: LoginComponent}
+  // {path: '**', redirectTo: ''}
 ];
 
 @NgModule({

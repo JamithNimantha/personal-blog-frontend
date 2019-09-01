@@ -8,6 +8,13 @@ import { SinglePostComponent } from './components/single-post/single-post.compon
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminMainMenuComponent } from './components/admin/admin-main-menu/admin-main-menu.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { CreateAPostComponent } from './components/admin/create-a-post/create-a-post.component';
+import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {ToastrModule} from 'ng6-toastr-notifications';
+import { SettingsComponent } from './components/admin/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +24,18 @@ import { AdminMainMenuComponent } from './components/admin/admin-main-menu/admin
     MainMenuComponent,
     LoginComponent,
     AdminMainMenuComponent,
+    DashboardComponent,
+    CreateAPostComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

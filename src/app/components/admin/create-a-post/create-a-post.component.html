@@ -1,0 +1,27 @@
+<div class="ui breadcrumb">
+  <div class="section">Home</div>
+  <div class="divider"> / </div>
+  <div class="active section">New Post</div>
+</div>
+
+
+<div class="ui form" style="width: 80.5%; margin-top: 0.5%">
+  <button class="ui right floated primary button">Save</button>
+<!--  <button class="ui left floated button">Left Floated</button>-->
+  <div class="field">
+    <label>Title</label>
+    <input type="text">
+  </div>
+  <div class="field">
+<!--    <app-form-upload-->
+<!--      (image)="setVenueImage($event)"></app-form-upload>-->
+      <img class="ui centered medium rounded image"
+           [src]="image">
+  </div>
+  <div class="field">
+    <label>Content</label>
+    <textarea rows="20"></textarea>
+  </div>
+
+</div>
+

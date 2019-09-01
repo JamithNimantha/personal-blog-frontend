@@ -1,1 +1,34 @@
-<p>login works!</p>
+<div class="ui middle aligned center aligned grid" id="main-top">
+  <div class="column">
+    <h1 class="ui image header">
+      <!--<div class="content">-->
+      <!--Log-in to your account-->
+      <img src="assets/signIn.png" style="width: 60%; height: 60%" class="image img-size" alt="">
+      <!--</div>-->
+    </h1>
+    <form #f="ngForm" class="ui large form">
+      <div class="ui stacked secondary  segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="E-mail address" ngModel>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password" 
+                   ngModel
+                   (keyup.enter)="signIn(f.value)"
+            >
+          </div>
+        </div>
+        <div class="ui fluid large button" (click)="signIn(f.value)">Sign In</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+  </div>
+</div>
