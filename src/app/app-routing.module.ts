@@ -8,6 +8,7 @@ import {AdminMainMenuComponent} from './components/admin/admin-main-menu/admin-m
 import {DashboardComponent} from './components/admin/dashboard/dashboard.component';
 import {CreateAPostComponent} from './components/admin/create-a-post/create-a-post.component';
 import {SettingsComponent} from './components/admin/settings/settings.component';
+import {FormUploadComponent} from './components/admin/form-upload/form-upload.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
       {path: '', component: DashboardComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'settings', component: SettingsComponent},
-      {path: 'create-a-post', component: CreateAPostComponent}
+      {path: 'create-a-post', component: CreateAPostComponent},
+      {path: 'upload', component: FormUploadComponent}
     ]
   },
   {path: 'login', component: LoginComponent}

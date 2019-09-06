@@ -1,0 +1,23 @@
+
+<!--<div class="oaerror danger" *ngIf="imageError">-->
+<!--  <strong>Error</strong>- Something bad happened! Try again later.-->
+<!--</div>-->
+  <div>
+    <div class="fields">
+      <div class="four wide field">
+        <input type="file" (change)="selectFile($event)" class="inputfile" id="embedpollfileinput"/>
+        <label for="embedpollfileinput" class="ui green button">
+          <i class="ui upload icon"></i>
+          Upload image</label>
+      </div>
+      <div class="twelve wide field">
+        <div *ngIf="currentFileUpload" class="ui indicating progress" [attr.data-percent]="progress.percentage">
+          <div class="bar" [ngStyle]="{'width': progress.percentage + '%'}">
+            <div class="progress">{{progress.percentage}}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

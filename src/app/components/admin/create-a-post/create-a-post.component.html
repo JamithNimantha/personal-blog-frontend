@@ -6,22 +6,31 @@
 
 
 <div class="ui form" style="width: 80.5%; margin-top: 0.5%">
-  <button class="ui right floated primary button">Save</button>
+
 <!--  <button class="ui left floated button">Left Floated</button>-->
+  <div class="ui teal secondary segment">
+    <button class="ui right floated primary button" (click)="onSave()">Save</button>
   <div class="field">
     <label>Title</label>
-    <input type="text">
+    <input [(ngModel)]="post.title" type="text">
   </div>
   <div class="field">
-<!--    <app-form-upload-->
-<!--      (image)="setVenueImage($event)"></app-form-upload>-->
-      <img class="ui centered medium rounded image"
-           [src]="image">
+    <label>Featured Image</label>
+    <div class="column" style="margin-left: 1%;width: 100%">
+      <div class="ui mini teal segment">
+        <app-form-upload
+          (image)="setVenueImage($event)"></app-form-upload>
+        <div>
+          <img style="height: 50%" class="ui medium centered image"
+               [src]="image">
+        </div>
+      </div>
+    </div>
   </div>
   <div class="field">
     <label>Content</label>
-    <textarea rows="20"></textarea>
+    <textarea [(ngModel)]="post.content" rows="20"></textarea>
   </div>
-
+  </div>
 </div>
 

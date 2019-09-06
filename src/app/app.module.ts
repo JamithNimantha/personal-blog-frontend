@@ -15,6 +15,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ng6-toastr-notifications';
 import { SettingsComponent } from './components/admin/settings/settings.component';
+import { FormUploadComponent } from './components/admin/form-upload/form-upload.component';
+import {UploadFileService} from './core/service/upload-file.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { SettingsComponent } from './components/admin/settings/settings.componen
     DashboardComponent,
     CreateAPostComponent,
     SettingsComponent,
+    FormUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { SettingsComponent } from './components/admin/settings/settings.componen
     ToastrModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
