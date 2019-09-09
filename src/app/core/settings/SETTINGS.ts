@@ -26,6 +26,10 @@ export class SETTINGS {
     changePostStatus: {
       url: SETTINGS.HTTP_PREFIX + '/api/post/change-status/',
       type: 'GET'
+    },
+    deletePost: {
+      url: SETTINGS.HTTP_PREFIX + '/api/post/',
+      type: 'DELETE'
     }
   };
 }

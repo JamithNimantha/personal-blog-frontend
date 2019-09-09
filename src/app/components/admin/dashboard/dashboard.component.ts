@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
     });
   }
   onStatusChange(post: Post) {
-    console.log(post);
     this.adminPostService.changeStatus(post.id).subscribe(data => {
       if (data) {
         this.alertService.showToaster(post.title + ' Status Changed', 'SUCCESS');
@@ -39,7 +38,14 @@ export class DashboardComponent implements OnInit {
     console.log(post);
   }
   onDelete(post) {
-    console.log(post);
+    this.adminPostService.deletePost(post.id).subscribe(data => {
+      if (data) {
+        this.alertService.showToaster(post.title + ' Removed !', 'SUCCESS');
+        this.posts.splice(post, 1);
+      } else {
+        this.alertService.showToaster('Cannot Remove ' + post.title + 'Error Occurred !', 'ERROR');
+      }
+    });
   }
 
 }
