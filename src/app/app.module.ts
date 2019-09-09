@@ -17,6 +17,9 @@ import {ToastrModule} from 'ng6-toastr-notifications';
 import { SettingsComponent } from './components/admin/settings/settings.component';
 import { FormUploadComponent } from './components/admin/form-upload/form-upload.component';
 import {UploadFileService} from './core/service/upload-file.service';
+import {AdminPostService} from './core/service/admin-post.service';
+import {AlertService} from './core/service/alert.service';
+import {DetailService} from './core/service/detail.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,12 @@ import {UploadFileService} from './core/service/upload-file.service';
     ToastrModule.forRoot(),
     HttpClientModule
   ],
-  providers: [UploadFileService],
+  providers: [
+    UploadFileService,
+    AdminPostService,
+    AlertService,
+    DetailService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

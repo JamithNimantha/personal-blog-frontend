@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from '../../../core/dto/Post';
+import {AdminPostService} from '../../../core/service/admin-post.service';
+import {AlertService} from '../../../core/service/alert.service';
 @Component({
   selector: 'app-create-a-post',
   templateUrl: './create-a-post.component.html',
@@ -9,18 +11,31 @@ export class CreateAPostComponent implements OnInit {
 
   image: any = 'assets/square-image.png';
   post: Post = new Post();
-  constructor() { }
+  constructor(private adminPostService: AdminPostService, private alertService: AlertService) { }
 
   ngOnInit() {
   }
 
-  setVenueImage($event) {
+  setFeaturedImage($event) {
     this.image = $event;
-    // alert(this.image);
   }
 
   onSave() {
-    console.log(this.post);
+    this.post.image = this.image;
+    if ((this.post.title != null || this.post.title !== undefined) &&
+      (this.post.content != null || this.post.content !== undefined)) {
+      this.adminPostService.savePost(this.post).subscribe(data => {
+        if (data) {
+          this.alertService.showToaster('New Post Created', 'SUCCESS');
+          this.post = new Post();
+          this.image = 'assets/square-image.png';
+        } else {
+          this.alertService.showToaster('Cannot Create New Post', 'ERROR');
+        }
+      });
+    } else {
+      this.alertService.showToaster('Title or Content is Empty', 'WARNING');
+    }
   }
 
 }

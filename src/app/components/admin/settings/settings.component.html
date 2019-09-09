@@ -5,15 +5,15 @@
 </div>
 <div class="ui form" style="width: 80.5%; margin-top: 0.5%">
 
-  <button class="ui right floated primary button">Save</button>
+  <button class="ui right floated primary button" (click)="onUpdate()">Save</button>
   <div class="ui hidden divider"></div>
   <h4 class="ui dividing header">Blog Information</h4>
   <div class="ui teal secondary segment">
   <div class="field">
-    <label>Title</label>
+    <label>Name</label>
     <div class="fields">
       <div class="eight wide field">
-        <input type="text" name="title" placeholder="Blogger Title">
+        <input type="text" name="name" [(ngModel)]="detail.name" placeholder="Blogger Name">
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
     <label>Description</label>
     <div class="fields">
       <div class="sixteen wide field">
-        <textarea rows="5" name="description" placeholder="Blogger Description"></textarea>
+        <textarea rows="5" name="description" [(ngModel)]="detail.description" placeholder="Blogger Description"></textarea>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
     <label>Blog Domain</label>
     <div class="fields">
       <div class="six wide field">
-        <input type="text" name="website" placeholder="Blog Domain Name">
+        <input type="text" [(ngModel)]="detail.domain" name="website" placeholder="Blog Domain Name">
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
     <label>Facebook Page</label>
     <div class="fields">
       <div class="sixteen wide field">
-        <input type="text" name="website" placeholder="Facebook Page URL">
+        <input type="text" [(ngModel)]="detail.facebook" name="website" placeholder="Facebook Page URL">
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
     <label>Twitter</label>
     <div class="fields">
       <div class="sixteen wide field">
-        <input type="text" name="website" placeholder="Twitter Page URL">
+        <input type="text" [(ngModel)]="detail.twitter" name="website" placeholder="Twitter Page URL">
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@
     <label>LinkedIn Page</label>
     <div class="fields">
       <div class="sixteen wide field">
-        <input type="text" name="website" placeholder="LinkedIn Page URL">
+        <input type="text" name="website" [(ngModel)]="detail.linkedin" placeholder="LinkedIn Page URL">
       </div>
     </div>
   </div>
@@ -64,7 +64,7 @@
     <label>Github Page</label>
     <div class="fields">
       <div class="sixteen wide field">
-        <input type="text" name="website" placeholder="Github Page URL">
+        <input type="text" name="website" [(ngModel)]="detail.github" placeholder="Github Page URL">
       </div>
     </div>
   </div>

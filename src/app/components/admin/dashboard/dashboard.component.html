@@ -36,7 +36,7 @@
   <tr>
     <th>#</th>
     <th>Post Title</th>
-    <th>Date</th>
+    <th>Created Date</th>
     <th>Modified Date</th>
     <th>Views</th>
     <th class="collapsing">Status</th>
@@ -46,192 +46,30 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+  <tr *ngFor="let post of posts;let i = index">
+    <td>{{i+1}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.createdDate}}</td>
+    <td>{{post.modifiedDate}}</td>
+    <td>{{post.views}}</td>
     <td class="collapsing">
       <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
+        <input type="checkbox" [checked]="post.status" (change)="onStatusChange(post)"> <label></label>
       </div>
     </td>
     <td class="center aligned">
-      <button class="circular ui icon green button">
+      <button class="circular ui icon green button" (click)="onView(post)">
         <i class="eye icon"></i>
       </button>
     </td>
     <td class="center aligned">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
+      <button class="circular ui icon blue button" (click)="onUpdate(post)">
+        <i class="edit icon"></i>
       </button>
     </td>
     <td class="center aligned">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td>123</td>
-    <td>How Install Lamp Stack</td>
-    <td>2019-09-11</td>
-    <td>2019-10-12</td>
-    <td>321</td>
-    <td class="collapsing">
-      <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
-      </div>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon green button">
-        <i class="eye icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td class="collapsing">
-      <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
-      </div>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon green button">
-        <i class="eye icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td class="collapsing">
-      <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
-      </div>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon green button">
-        <i class="eye icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td class="collapsing">
-      <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
-      </div>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon green button">
-        <i class="eye icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td class="collapsing">
-      <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
-      </div>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon green button">
-        <i class="eye icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td style="text-align: center"></td>
-    <td class="collapsing">
-      <div class="ui toggle checkbox">
-        <input type="checkbox" checked> <label></label>
-      </div>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon green button">
-        <i class="eye icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon red button">
-        <i class="close icon icon"></i>
-      </button>
-    </td>
-    <td style="text-align: center">
-      <button class="circular ui icon blue button">
-        <i class="edit icon"></i>
+      <button class="circular ui icon red button" (click)="onDelete(post)">
+        <i class="close icon"></i>
       </button>
     </td>
   </tr>
