@@ -22,8 +22,15 @@ export class DashboardComponent implements OnInit {
       this.posts = value;
     });
   }
-  onStatusChange(post) {
+  onStatusChange(post: Post) {
     console.log(post);
+    this.adminPostService.changeStatus(post.id).subscribe(data => {
+      if (data) {
+        this.alertService.showToaster(post.title + ' Status Changed', 'SUCCESS');
+      } else {
+        this.alertService.showToaster('Cannot Change Status', 'ERROR');
+      }
+    });
   }
   onView(post) {
     console.log(post);

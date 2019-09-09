@@ -22,6 +22,10 @@ export class SETTINGS {
     updateDetail: {
       url: SETTINGS.HTTP_PREFIX + '/api/detail',
       type: 'PUT'
+    },
+    changePostStatus: {
+      url: SETTINGS.HTTP_PREFIX + '/api/post/change-status/',
+      type: 'GET'
     }
   };
 }

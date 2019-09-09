@@ -19,4 +19,8 @@ export class AdminPostService {
     return this.httpClient.get<Array<Post>>(SETTINGS.ENDPOINTS.getAllPosts.url);
   }
 
+  changeStatus(id: number): Observable<boolean>{
+    return this.httpClient.get<boolean>(SETTINGS.ENDPOINTS.changePostStatus.url + id);
+  }
+
 }
