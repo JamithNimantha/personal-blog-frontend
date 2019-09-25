@@ -30,6 +30,11 @@ export class SETTINGS {
     deletePost: {
       url: SETTINGS.HTTP_PREFIX + '/api/post/',
       type: 'DELETE'
-    }
+    },
+    // PUBLIC ENDPOINTS
+    getAllPublicPosts: {
+      url: SETTINGS.HTTP_PREFIX + '/api/post/all-posts',
+      type: 'GET'
+    },
   };
 }

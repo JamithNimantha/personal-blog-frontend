@@ -11,6 +11,8 @@ export class AdminPostService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // ADMIN LEVEL
+
   savePost(post: Post): Observable<any> {
     return this.httpClient.post<any>(SETTINGS.ENDPOINTS.createPost.url, post);
   }
@@ -25,6 +27,12 @@ export class AdminPostService {
 
   deletePost(id: number): Observable<boolean> {
     return this.httpClient.delete<boolean>(SETTINGS.ENDPOINTS.deletePost.url + id);
+  }
+
+  // PUBLIC LEVEL
+
+  getAllPublicPosts(): Observable<Array<Post>>{
+    return this.httpClient.get<Array<Post>>(SETTINGS.ENDPOINTS.getAllPublicPosts.url);
   }
 
 }

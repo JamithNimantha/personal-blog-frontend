@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AdminPostService} from '../../core/service/admin-post.service';
+import {PublicPost} from '../../core/dto/PublicPost';
 
 declare var $: any;
 
@@ -10,10 +12,12 @@ declare var $: any;
 
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  posts: PublicPost[] = [];
+
+  constructor(private postService: AdminPostService) { }
 
   ngOnInit() {
-
+  this.getAllPosts();
     // $(document).ready(() => {
     //   // fix main menu to page on passing
     //   $('.main.menu').visibility({
@@ -37,6 +41,15 @@ export class HomePageComponent implements OnInit {
     //   });
     // });
 
+  }
+  private getAllPosts() {
+    this.postService.getAllPublicPosts().subscribe(data => {
+        this.posts = data;
+    });
+  }
+
+  public onReadMore(post) {
+    console.log(post);
   }
 
 }
