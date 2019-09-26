@@ -19,6 +19,7 @@ import {UploadFileService} from './core/service/upload-file.service';
 import {AdminPostService} from './core/service/admin-post.service';
 import {AlertService} from './core/service/alert.service';
 import {DetailService} from './core/service/detail.service';
+import {ActivatedRoute} from '@angular/router';
 
 @NgModule({
   declarations: [

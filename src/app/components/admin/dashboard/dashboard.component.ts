@@ -41,7 +41,8 @@ export class DashboardComponent implements OnInit {
     this.adminPostService.deletePost(post.id).subscribe(data => {
       if (data) {
         this.alertService.showToaster(post.title + ' Removed !', 'SUCCESS');
-        this.posts.splice(post, 1);
+        // this.posts.splice(post, 1);
+        this.getAllPosts();
       } else {
         this.alertService.showToaster('Cannot Remove ' + post.title + 'Error Occurred !', 'ERROR');
       }

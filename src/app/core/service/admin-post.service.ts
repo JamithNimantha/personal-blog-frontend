@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Post} from '../dto/Post';
 import {Observable} from 'rxjs';
 import {SETTINGS} from '../settings/SETTINGS';
+import {PublicPost} from '../dto/PublicPost';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +32,11 @@ export class AdminPostService {
 
   // PUBLIC LEVEL
 
-  getAllPublicPosts(): Observable<Array<Post>>{
+  getAllPublicPosts(): Observable<Array<Post>> {
     return this.httpClient.get<Array<Post>>(SETTINGS.ENDPOINTS.getAllPublicPosts.url);
   }
 
+  getSinglePost(permalink: string): Observable<PublicPost> {
+    return this.httpClient.get<PublicPost>(SETTINGS.ENDPOINTS.getSinglePost.url + permalink);
+  }
 }

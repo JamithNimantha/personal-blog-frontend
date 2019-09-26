@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: '', component: MainMenuComponent, children: [
       {path: '', component: HomePageComponent},
-      {path: 'post', component: SinglePostComponent}
+      {path: ':permalink', component: SinglePostComponent}
     ]
   },
   {path: 'admin-login', component: LoginComponent},

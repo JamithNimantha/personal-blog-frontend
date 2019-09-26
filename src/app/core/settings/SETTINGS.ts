@@ -36,5 +36,9 @@ export class SETTINGS {
       url: SETTINGS.HTTP_PREFIX + '/api/post/all-posts',
       type: 'GET'
     },
+    getSinglePost: {
+      url: SETTINGS.HTTP_PREFIX + '/api/post/',
+      type: 'GET'
+    }
   };
 }
