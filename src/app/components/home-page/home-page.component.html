@@ -10,7 +10,7 @@
     <img class="ui small left floated image" [src]="post.image">
     <p>
       {{post.content}}
-      <button class="ui right floated button" (click)="onReadMore(post)">Read More</button>
+      <button class="ui right floated button" [routerLink]="post.permalink">Read More</button>
     </p>
 <!--    <button class="ui right floated button" (click)="onReadMore(post)">Read More</button>-->
     <div class="ui hidden divider"></div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AdminPostService} from '../../../core/service/admin-post.service';
 import {AlertService} from '../../../core/service/alert.service';
 import {Post} from '../../../core/dto/Post';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ import {Post} from '../../../core/dto/Post';
 export class DashboardComponent implements OnInit {
   posts: Post[] = [];
 
-  constructor(private adminPostService: AdminPostService, private alertService: AlertService) { }
+  constructor(private adminPostService: AdminPostService, private alertService: AlertService, private route: Router) { }
 
   ngOnInit() {
     this.getAllPosts();
@@ -32,7 +33,8 @@ export class DashboardComponent implements OnInit {
     });
   }
   onView(post) {
-    console.log(post);
+    // console.log(post);
+    this.route.navigate([post.permalink]);
   }
   onUpdate(post) {
     console.log(post);

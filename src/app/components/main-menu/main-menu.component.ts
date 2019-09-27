@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DetailService} from '../../core/service/detail.service';
+import {Detail} from '../../core/dto/Detail';
 
 declare var $: any;
 
@@ -9,8 +11,8 @@ declare var $: any;
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
-
-  constructor() { }
+  detail: Detail = new Detail();
+  constructor(private detailService: DetailService) { }
 
   ngOnInit() {
     $('.main.menu').visibility({
@@ -33,6 +35,14 @@ export class MainMenuComponent implements OnInit {
 
     });
 
+    this.getDetails();
+
+  }
+
+  private getDetails() {
+    this.detailService.getDetails().subscribe(value => {
+        this.detail = value;
+    });
   }
 
 }
