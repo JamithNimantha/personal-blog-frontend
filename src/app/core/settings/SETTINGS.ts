@@ -39,6 +39,15 @@ export class SETTINGS {
     getSinglePost: {
       url: SETTINGS.HTTP_PREFIX + '/api/post/',
       type: 'GET'
+    },
+    // COMMENT
+    saveComment: {
+      url: SETTINGS.HTTP_PREFIX + '/api/comment',
+      type: 'POST'
+    },
+    getComment: {
+      url: SETTINGS.HTTP_PREFIX + '/api/comment/',
+      type: 'GET'
     }
   };
 }

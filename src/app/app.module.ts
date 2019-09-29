@@ -20,6 +20,7 @@ import {AdminPostService} from './core/service/admin-post.service';
 import {AlertService} from './core/service/alert.service';
 import {DetailService} from './core/service/detail.service';
 import {ActivatedRoute} from '@angular/router';
+import {CommentService} from './core/service/comment.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {ActivatedRoute} from '@angular/router';
     UploadFileService,
     AdminPostService,
     AlertService,
-    DetailService
+    DetailService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })
