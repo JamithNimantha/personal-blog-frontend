@@ -18,13 +18,14 @@ const routes: Routes = [
       {path: ':permalink', component: SinglePostComponent}
     ]
   },
-  {path: 'admin-login', component: LoginComponent},
-  {path: 'app', component: AdminMainMenuComponent, children: [
+  {path: 'admin/login', component: LoginComponent},
+  {path: 'admin', component: AdminMainMenuComponent, children: [
       {path: '', component: DashboardComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'settings', component: SettingsComponent},
       {path: 'create-a-post', component: CreateAPostComponent},
-      {path: 'upload', component: FormUploadComponent}
+      {path: 'upload', component: FormUploadComponent},
+      {path: '**', redirectTo: 'dashboard'}
     ]
   },
   {path: 'login', component: LoginComponent}

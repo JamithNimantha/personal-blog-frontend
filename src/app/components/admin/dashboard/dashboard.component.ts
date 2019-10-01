@@ -3,6 +3,8 @@ import {AdminPostService} from '../../../core/service/admin-post.service';
 import {AlertService} from '../../../core/service/alert.service';
 import {Post} from '../../../core/dto/Post';
 import {Router} from '@angular/router';
+import {DetailService} from '../../../core/service/detail.service';
+import {Stat} from '../../../core/dto/Stat';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,11 +13,20 @@ import {Router} from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   posts: Post[] = [];
+  stat: Stat = new Stat();
 
-  constructor(private adminPostService: AdminPostService, private alertService: AlertService, private route: Router) { }
+  constructor(private adminPostService: AdminPostService, private alertService: AlertService,
+              private route: Router, private detailService: DetailService) { }
 
   ngOnInit() {
     this.getAllPosts();
+    this.getStats();
+  }
+
+  private getStats() {
+    this.detailService.getStats().subscribe(data => {
+      this.stat = data;
+    });
   }
 
   getAllPosts() {

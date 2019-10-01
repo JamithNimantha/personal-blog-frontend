@@ -19,6 +19,10 @@ export class SETTINGS {
       url: SETTINGS.HTTP_PREFIX + '/api/detail',
       type: 'GET'
     },
+    getStats: {
+      url: SETTINGS.HTTP_PREFIX + '/api/detail/stat',
+      type: 'GET'
+    },
     updateDetail: {
       url: SETTINGS.HTTP_PREFIX + '/api/detail',
       type: 'PUT'
